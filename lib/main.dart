@@ -52,7 +52,16 @@ class _QuotesState extends State<Quotes> {
           // children: <Widget>[
 
           // ],
-          children: quotes.map((quote) => QuoteCard(quote: quote)).toList(),
+          children: quotes
+              .map((quote) => QuoteCard(
+                  quote: quote,
+                  delete: () {
+                    // function as a parameter......................
+                    setState(() {
+                      quotes.remove(quote);
+                    });
+                  }))
+              .toList(),
         ),
       ),
     );

@@ -1,11 +1,14 @@
+// import 'dart:html';
 import 'dart:ui';
 import 'quotes.dart';
 import 'package:flutter/material.dart';
 
 class QuoteCard extends StatelessWidget {
   final Quote quote;
+  final Function delete;
   QuoteCard(
-      {this.quote}); // final key word is neccessary, because of stateLessWidget's values can't change time to time.
+      {this.quote,
+      this.delete}); // final key word is neccessary, because of stateLessWidget's values can't change time to time.
 
   @override
   Widget build(BuildContext context) {
@@ -38,6 +41,14 @@ class QuoteCard extends StatelessWidget {
                 fontSize: 12.0,
                 color: Colors.black,
               ),
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            FlatButton.icon(
+              onPressed: delete,
+              label: Text('delete quote'),
+              icon: Icon(Icons.delete),
             )
           ],
         ),
