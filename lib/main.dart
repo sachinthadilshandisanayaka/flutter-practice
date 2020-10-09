@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'quotes.dart';
 
 import 'package:flutter/material.dart';
 
@@ -16,10 +17,14 @@ class Quotes extends StatefulWidget {
 }
 
 class _QuotesState extends State<Quotes> {
-  List<String> quotes = [
-    'Be yourself, everyone else is already taken',
-    'So many books, so little time',
-    'A room without books is like a body without a soul'
+  List<Quote> quotes = [
+    Quote(
+        text: 'Be yourself, everyone else is already taken',
+        author: 'sachintha'),
+    Quote(text: 'So many books, so little time', author: 'kanchana'),
+    Quote(
+        text: 'A room without books is like a body without a soul',
+        author: 'Kmac')
   ];
 
   @override
@@ -48,7 +53,7 @@ class _QuotesState extends State<Quotes> {
           // ],
           children: quotes.map((quote) {
             return Text(
-              quote,
+              '${quote.text} - ${quote.author}',
               style: TextStyle(
                 color: Colors.white,
               ),
