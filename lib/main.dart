@@ -1,8 +1,8 @@
 // import 'dart:html';
 import 'dart:ui';
 import 'quotes.dart';
-
 import 'package:flutter/material.dart';
+import 'card_quotes.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -25,44 +25,8 @@ class _QuotesState extends State<Quotes> {
     Quote(text: 'So many books, so little time', author: 'kanchana'),
     Quote(
         text: 'A room without books is like a body without a soul',
-        author: 'Kmac')
+        author: 'Nandipala')
   ];
-
-  Widget quoteTemplate(quote) {
-    return Card(
-      margin: EdgeInsets.fromLTRB(10.0, 15.0, 10.0, 0),
-      child: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            CircleAvatar(
-              backgroundImage: AssetImage('assets/a.jpg'),
-              radius: 17.0,
-            ),
-            Text(
-              quote.text,
-              style: TextStyle(
-                fontSize: 12.0,
-                color: Colors.black,
-              ),
-            ),
-            SizedBox(
-              height: 5.0,
-            ),
-            Text(
-              quote.author,
-              style: TextStyle(
-                fontSize: 12.0,
-                color: Colors.black,
-              ),
-            )
-          ],
-        ),
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -87,7 +51,7 @@ class _QuotesState extends State<Quotes> {
           // children: <Widget>[
 
           // ],
-          children: quotes.map((quote) => quoteTemplate(quote)).toList(),
+          children: quotes.map((quote) => QuoteCard(quote: quote)).toList(),
         ),
       ),
     );
