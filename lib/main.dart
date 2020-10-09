@@ -36,10 +36,14 @@ class _QuotesState extends State<Quotes> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
+            CircleAvatar(
+              backgroundImage: AssetImage('assets/a.jpg'),
+              radius: 17.0,
+            ),
             Text(
               quote.text,
               style: TextStyle(
-                fontSize: 18.0,
+                fontSize: 12.0,
                 color: Colors.black,
               ),
             ),
@@ -49,7 +53,7 @@ class _QuotesState extends State<Quotes> {
             Text(
               quote.author,
               style: TextStyle(
-                fontSize: 18.0,
+                fontSize: 12.0,
                 color: Colors.black,
               ),
             )
