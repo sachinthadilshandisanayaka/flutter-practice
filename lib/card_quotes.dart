@@ -25,6 +25,8 @@ class QuoteCard extends StatelessWidget {
               style: TextStyle(
                 fontSize: 12.0,
                 color: Colors.black,
+                fontFamily: 'Dosis',
+                fontWeight: FontWeight.bold,
               ),
             ),
             SizedBox(

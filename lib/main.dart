@@ -35,9 +35,10 @@ class _QuotesState extends State<Quotes> {
         title: Text(
           'Quotes',
           style: TextStyle(
-            letterSpacing: 2.0,
+            letterSpacing: 3.0,
             fontSize: 20.0,
             fontWeight: FontWeight.bold,
+            fontFamily: 'EBGaramond',
           ),
         ),
         elevation: 0.0,
