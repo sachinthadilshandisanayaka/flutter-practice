@@ -1,3 +1,4 @@
+// import 'dart:html';
 import 'dart:ui';
 import 'quotes.dart';
 
@@ -27,6 +28,37 @@ class _QuotesState extends State<Quotes> {
         author: 'Kmac')
   ];
 
+  Widget quoteTemplate(quote) {
+    return Card(
+      margin: EdgeInsets.fromLTRB(10.0, 15.0, 10.0, 0),
+      child: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text(
+              quote.text,
+              style: TextStyle(
+                fontSize: 18.0,
+                color: Colors.black,
+              ),
+            ),
+            SizedBox(
+              height: 5.0,
+            ),
+            Text(
+              quote.author,
+              style: TextStyle(
+                fontSize: 18.0,
+                color: Colors.black,
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,14 +83,7 @@ class _QuotesState extends State<Quotes> {
           // children: <Widget>[
 
           // ],
-          children: quotes.map((quote) {
-            return Text(
-              '${quote.text} - ${quote.author}',
-              style: TextStyle(
-                color: Colors.white,
-              ),
-            );
-          }).toList(),
+          children: quotes.map((quote) => quoteTemplate(quote)).toList(),
         ),
       ),
     );
